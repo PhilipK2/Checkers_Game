@@ -1,0 +1,77 @@
+import React from "react";
+import {Button, Icon, Modal, SideNavItem, SideNav, Card, CardTitle, Input, Footer} from 'react-materialize';
+import 'materialize-css';
+
+const Home = props => (
+
+<main>
+    <div className="container">
+        <div className="jumbotron text-center"></div>
+    <Card className='small'
+	    header={<CardTitle id="h2h" image='http://www.cityrider.com/fixed/43aspect.png' >
+        <span class="orange-text text-lighten-1"><h2>Head to Head</h2></span></CardTitle>}
+
+	    actions={[<SideNav
+                    trigger={<Button className = "btn light-green waves-effect waves-light">Choose your opponent</Button>}
+                    options={{ closeOnClick: true }}>
+                    <SideNavItem userView
+		                user={{
+                            background:'https://i.stack.imgur.com/rJzOY.jpg',
+                            image: 'http://lorempixel.com/400/200/',
+                            name: 'John Doe',
+                            email: 'jdandturk@gmail.com'
+		                    }}/>
+                    <SideNavItem href='#!icon' icon='person_pin'>My Profile</SideNavItem>
+                    <SideNavItem divider />
+                    <SideNavItem subheader>Online Users</SideNavItem>
+                    <SideNavItem divider />
+                    <SideNavItem href='#!icon' icon='face'>p1</SideNavItem>
+                    <SideNavItem href='#!icon' icon='face'>P2
+                        <Modal bottomSheet
+                            header = {<h2>Your conversation with John Doe</h2>}
+                            trigger={<Button className = " btn light-green waves-effect waves-light" id="chat" icon='chat_bubble_outline'></Button>}>
+                            <div className="card-panel grey darken-3">
+                                <span class="orange-text text-lighten-1"><p>Say bro, you down to brawl?</p></span>
+                                <br/>
+                                <span class="blue-text text-lighten-5"><p>Brah, you know I'm always down to brawl.</p></span>
+                                <br/>
+                                <span class="orange-text text-lighten-1"><p>Brawl Time!!!!!!!</p></span>
+                                <br/>
+                                <span class="blue-text text-lighten-5"><p>....Start the game bro.</p></span>
+                                <br/>
+                            </div>
+                            <br/>
+                            <Input for="text" label="Type your message here" />
+                        </Modal>
+                    </SideNavItem>
+                </SideNav>]}>
+
+        <p>Go head to head with an opponent by clicking here!</p>
+    </Card>
+    <br/>
+
+    <Card className="small"
+        header={<CardTitle reveal image={"http://www.cityrider.com/fixed/43aspect.png"} waves='light'/>}
+		title={<span class="orange-text text-lighten-1">Invite a Friend</span>}
+		reveal={<h4>THIS IS WHERE WE WILL PUT THE LINK TO INVITE A FRIEND TO COME JOIN IN ON THE FUN</h4>}>
+    </Card>
+    </div>
+    <br/>
+
+    <Footer copyrights="&copy 2017 SuperGroup"
+            className="light-green"
+            links={
+                <ul>
+                    <li><a className="grey-text text-lighten-3" href="https://github.com/AaronA05" target="_blank">Aaron Arndt</a></li>
+                    <li><a className="grey-text text-lighten-3" href="https://github.com/satsumao" target="_blank">Matthew Duckworth</a></li>
+                    <li><a className="grey-text text-lighten-3" href="https://github.com/PhilipK2" target="_blank">Philip Kappaz II</a></li>
+                    <li><a className="grey-text text-lighten-3" href="https://github.com/sranney" target="_blank">Spencer Ranney</a></li>
+                </ul>
+                }>
+                <h5 className="white-text">Final Project: Check your Checkers</h5>
+                <p className="grey-text text-lighten-4">2017 Fall Cohort of the SMU Coding Bootcamp</p>
+    </Footer>   
+    </main>
+);
+
+export default Home
